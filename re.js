@@ -15,7 +15,14 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
         const reviewsDiv = document.getElementById('reviews');
         const newReview = document.createElement('div');
         newReview.classList.add('review');
-        newReview.innerHTML = `<strong>${name}</strong><p>${review}</p><img src="${e.target.result}" alt="후기 이미지">`;
+
+        // 후기 내용과 이미지 추가
+        newReview.innerHTML = `
+            <strong>${name}</strong>
+            <p>${review}</p>
+            <img src="${e.target.result}" alt="후기 이미지">
+        `;
+        
         reviewsDiv.appendChild(newReview);
     };
     reader.readAsDataURL(image);
@@ -28,11 +35,26 @@ const ADMIN_PASSWORD = "k8h6m4k7h5j3"; // 관리자 비밀번호 설정
 
 document.getElementById('adminDeleteButton').addEventListener('click', function() {
     const password = document.getElementById('adminPassword').value;
-    
+
     if (password === ADMIN_PASSWORD) {
         const reviewsDiv = document.getElementById('reviews');
-        reviewsDiv.innerHTML = ''; // 모든 후기를 삭제
-        alert("모든 후기가 삭제되었습니다.");
+        const reviewElements = reviewsDiv.getElementsByClassName('review');
+
+        for (let review of reviewElements) {
+            // 삭제 버튼 추가
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '삭제';
+            deleteButton.classList.add('deleteButton');
+
+            // 삭제 버튼 클릭 이벤트 추가
+            deleteButton.addEventListener('click', function() {
+                reviewsDiv.removeChild(review);
+            });
+
+            review.appendChild(deleteButton); // 후기 아래에 삭제 버튼 추가
+        }
+        
+        alert("삭제 버튼이 추가되었습니다.");
     } else {
         alert("잘못된 비밀번호입니다.");
     }
