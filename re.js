@@ -59,3 +59,14 @@ document.getElementById('adminDeleteButton').addEventListener('click', function(
         alert("잘못된 비밀번호입니다.");
     }
 });
+
+// 후기 제출 시 AJAX 요청
+const submitReview = (review) => {
+    fetch('/submit-review', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ review }),
+    });
+};
