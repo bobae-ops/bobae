@@ -1,33 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>익산보배경매장 상품 후기</title>
-    <link rel="stylesheet" href="st.css"> <!-- CSS 파일 링크 -->
+    <title>보배 후기 사이트</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1>익산보배경매장 상품 후기</h1>
-    <p>찾아 주셔서 감사합니다 ❤️</p>
-    <form id="reviewForm">
-        <label for="name">이름:</label>
-        <input type="text" id="name" placeholder="이름을 입력하세요" required>
-
-        <label for="review">후기:</label>
-        <textarea id="review" rows="5" placeholder="후기를 작성하세요" required></textarea>
-
-        <label for="image">사진 업로드:</label>
-        <input type="file" id="image" accept="image/*" required>
-
-        <button type="submit">후기 제출</button>
-    </form>
-
-    <div class="reviews" id="reviews">
-        <h2>작성된 후기</h2>
+    <div class="container">
+        <h1>보배 상품 후기 작성</h1>
+        <form id="reviewForm">
+            <textarea id="reviewInput" placeholder="후기를 작성하세요..." required></textarea>
+            <input type="file" id="imageUpload" accept="image/*" required>
+            <button type="submit">후기 제출</button>
+        </form>
+        <div id="reviewsContainer"></div>
+        
+        <h2>관리자 로그인</h2>
+        <input type="password" id="adminPassword" placeholder="관리자 비밀번호 입력" required>
+        <button id="adminLoginBtn">로그인</button>
+        <button id="adminDeleteBtn" style="display: none;">후기 삭제</button> <!-- 숨기기 -->
     </div>
-
-    <script src="re.js"></script> <!-- JavaScript 파일 링크 -->
+    <script src="script.js"></script>
 </body>
 </html>
