@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익산보배경매장 상품 후기</title>
+    <link rel="stylesheet" href="st.css"> <!-- CSS 파일 링크 -->
+</head>
+<body>
+
+    <h1>익산보배경매장 상품 후기</h1>
+    <p>찾아 주셔서 감사합니다 ❤️</p>
+    <form id="reviewForm">
+        <label for="name">이름:</label>
+        <input type="text" id="name" placeholder="이름을 입력하세요" required>
+
+        <label for="review">후기:</label>
+        <textarea id="review" rows="5" placeholder="후기를 작성하세요" required></textarea>
+
+        <label for="image">사진 업로드:</label>
+        <input type="file" id="image" accept="image/*" required>
+
+        <button type="submit">후기 제출</button>
+    </form>
+
+    <div class="reviews" id="reviews">
+        <h2>작성된 후기</h2>
+    </div>
+
+    <script src="re.js"></script> <!-- JavaScript 파일 링크 -->
+</body>
+</html>
