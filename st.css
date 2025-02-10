@@ -5,6 +5,10 @@ body {
     background-color: #e0f7fa; /* 눈이 편안한 파란색 배경 */
 }
 
+p { 
+    text-align: center;
+}
+
 h1 {
     color: #333;
     text-align: center;
