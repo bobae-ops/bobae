@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보배 후기 사이트</title>
+    <title>익산보배경매장</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>보배 상품 후기 작성</h1>
+        <h1>익산보배경매장 상품 후기 작성</h1>
+        <p><b>안녕하세요🤗 저의 놀라운 상품 잘 만나 보셨나요?</b></p>
         <form id="reviewForm">
+            <input type="text" id="nicknameInput" placeholder="닉네임을 입력하세요..." required>
             <textarea id="reviewInput" placeholder="후기를 작성하세요..." required></textarea>
             <input type="file" id="imageUpload" accept="image/*" required>
+            
             <button type="submit">후기 제출</button>
         </form>
         <div id="reviewsContainer"></div>
-        
+
         <h2>관리자 로그인</h2>
         <input type="password" id="adminPassword" placeholder="관리자 비밀번호 입력" required>
         <button id="adminLoginBtn">로그인</button>
